@@ -1,1 +1,46 @@
-hello guys
+//First install apache Server 
+sudo apt install apache2
+
+
+//Remove Default webpage of apache 
+sudo rm /var/www/html/info.html
+
+//Install DVWA in 
+cd /var/www/html/
+sudo git clone https://github.com/ethicalhack3r/DVWA.git
+
+//now give permission to DVWA
+
+sudo chmod -R 777 /var/www/html/DVWA/
+
+//Now install MYSQL
+sudo apt install mysql-server
+
+//
+sudo service apache2 restart
+
+//Create Database and User
+
+mysql -u root -p
+
+
+//To create a database
+CREATE DATABASE dvwadb;
+
+To create a database user, 
+type the following command. Replace dvwausr with the user you want to create, and replace dvwa@123 with the user’s password:
+CREATE USER ‘dvwausr’@’127.0.0.1' IDENTIFIED BY ‘dvwar@123’;
+Grant permission, type the following command:
+GRANT ALL PRIVILEGES ON dvwadb.* TO ‘dvwausr’@’localhost’ IDENTIFIED BY ‘dvwa@123’;
+Once done, exit the application by typing either of the following commands:
+\q
+(or)
+exit
+
+//Php
+sudo apt install php5.6
+
+From now follow this steps 
+Given on site 
+https://medium.com/datadriveninvestor/setup-install-dvwa-into-your-linux-distribution-d76dc3b80357
+
